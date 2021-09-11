@@ -1,1 +1,1 @@
-work: bash start.sh
+heroku worker: python bot.py
