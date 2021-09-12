@@ -4,7 +4,7 @@ from pprint import pprint
 
 from telebot import types
 
-bot = telebot.TeleBot("Token")
+bot = telebot.TeleBot("937970083:AAGu76vBuNqB58e0NzP8EhJFIu9DJZUYdPc")
 
 try:
     @bot.message_handler(commands=['start'])
