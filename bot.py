@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 import telebot
 from pprint import pprint
-
 from telebot import types
+import os
 
+
+PORT = int(os.environ.get('PORT', 5000))
 bot = telebot.TeleBot("937970083:AAGu76vBuNqB58e0NzP8EhJFIu9DJZUYdPc")
 
 
@@ -19,7 +21,8 @@ def send_welcome(message):
 @bot.message_handler(commands=['help'])
 def send_help(message):
     bot.reply_to(message,
-                 text="Графік роботи:\nбудні дні 9:00-19:00\nсубота 10:00-17:00\nнеділя - вихідний\nНатисніть на /location щоб дізнатися де ми знаходимося")
+                 text="Графік роботи:\nбудні дні 9:00-19:00\nсубота 10:00-17:00\nнеділя - вихідний\nНатисніть на "
+                      "/location щоб дізнатися де ми знаходимося")
     markup1 = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True, one_time_keyboard=True)
     itembtn1 = types.KeyboardButton('Фото на документи')
     itembtn2 = types.KeyboardButton('Роздрук фото та текстів')
@@ -123,4 +126,3 @@ def echo_all(message):
 
 
 bot.polling()
-
