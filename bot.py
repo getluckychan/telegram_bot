@@ -6,7 +6,7 @@ import os
 
 
 PORT = int(os.environ.get('PORT', 5000))
-bot = telebot.TeleBot("937970083:AAGu76vBuNqB58e0NzP8EhJFIu9DJZUYdPc")
+bot = telebot.TeleBot("token")
 
 
 @bot.message_handler(commands=['start'])
